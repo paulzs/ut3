@@ -6,7 +6,7 @@ $(document).ready(function() {
         };  
     } 
 
-    socket = new WebSocket("ws://192.241.177.237:5000/talk");
+    socket = new WebSocket("ws://" + window.location.host + "/talk");
 
     socket.onopen = function(){
         console.log("open");
