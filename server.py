@@ -8,8 +8,9 @@ def ws_handler(environ, start_response):
 		return ["This is a test"]
 	elif environ['PATH_INFO'] == '/talk':
 		ws = environ['wsgi.websocket']
-		message = ws.receive()
-		ws.send(message)
+		while 1:
+			message = ws.receive()
+			ws.send(message)
 		return "talk talk talk"
 
 if __name__ == '__main__':
