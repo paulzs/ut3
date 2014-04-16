@@ -9,6 +9,7 @@ def get_persons(person):
 	adj='mean gangsta'
 	return flask.render_template('index.html'.person=person,adj=adj)
 
+# Broadcast
 @socketio.on('my broadcast event',namespace='/test')
 def test_message(message):
 	emit('my response',{'data': message['data']}, broadcast=True)
