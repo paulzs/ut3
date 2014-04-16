@@ -6,7 +6,7 @@ $(document).ready(function() {
         };  
     } 
 
-    socket = new WebSocket("ws://107.170.58.71:8000/talk");
+    socket = new WebSocket("ws://localhost:8000/talk");
 
     socket.onopen = function(){
         console.log("open");
@@ -15,6 +15,9 @@ $(document).ready(function() {
     socket.onmessage = function(msg) {
         console.log("Received message: ");
         console.log(msg);
+        if (msg.data == "ping") {
+            socket.send("pong");
+        }
         $("#messages").append("<p>"+msg.data+"</p>");
     };
 
