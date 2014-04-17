@@ -31,6 +31,9 @@ class MatchMaker(object):
             self.waiting_players.append(player)
 
 class Player(gevent.Greenlet):
+    
+    #Player Constructor
+    
     def __init__(self, name, websocket, match_maker):
         gevent.Greenlet.__init__(self)
         self.name = name
