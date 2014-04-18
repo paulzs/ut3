@@ -10,6 +10,8 @@ app = Flask(__name__)
 def hello():
     return "<b>hello world</b>"
 
+#Test URL with name
+
 @app.route('/persons/<string:person>')
 def get_persons(person):
     if person.lower() != 'alex':
@@ -31,6 +33,8 @@ def talk():
         gevent.joinall([spawned_process])
         return "true"
     return "true"
+
+# Set up websocket to constantly listen for message
 
 def handle_ws(ws):
     print("handling")
