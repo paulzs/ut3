@@ -122,8 +122,9 @@ class Player(gevent.Greenlet):
             self.exit()
 
     def play(self): # wait on websocket and message queue
-        message = self.received_queue.get()
-        self.challenger.send(message)
+        while True:
+            message = self.received_queue.get()
+            self.challenger.send(message)
 
 class Game(object):
     def __init__(self):
