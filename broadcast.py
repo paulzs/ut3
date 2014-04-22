@@ -22,5 +22,5 @@ def test_connect():
 def test_disconnect():
 	emit('my response',{'data':'Disconnected'})
 
-if __name__='__main__':
+if __name__=='__main__':
 	socketio.run(app)
