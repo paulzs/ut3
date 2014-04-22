@@ -1,13 +1,15 @@
 from flask import Flask
 import flask
 from flask.ext.socketio import SocketIO, emit
+import flask.ext.socketio
 
 app = Flask(__name__)
+socketio = SocketIO(app)
 
 @app.route('/persons/<string:person>')
 def get_persons(person):
 	adj='mean gangsta'
-	return flask.render_template('index.html'.person=person,adj=adj)
+	return flask.render_template('index.html',person=person,adj=adj)
 
 # Broadcast
 @socketio.on('my broadcast event',namespace='/test')
