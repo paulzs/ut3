@@ -155,5 +155,5 @@ class Game(object):
 
 if __name__ == '__main__':
     game = Game()
-    wsserver = WSGIServer(('0.0.0.0',8000), game.connect_handler, handler_class=WebSocketHandler)
+    wsserver = WSGIServer(('0.0.0.0',7000), game.connect_handler, handler_class=WebSocketHandler)
     wsserver.serve_forever()
