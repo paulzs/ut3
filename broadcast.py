@@ -3,6 +3,8 @@ import flask
 from flask.ext.socketio import SocketIO, emit
 import flask.ext.socketio
 
+#NO LONGER NEEDED. REFERENCE ONLY
+
 app = Flask(__name__)
 socketio = SocketIO(app)
 
