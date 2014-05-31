@@ -14,12 +14,8 @@ def hello():
 
 @app.route('/persons/<string:person>')
 def get_persons(person):
-    if person.lower() != 'alex':
-        adj='boss'
-        return flask.render_template('index.html', person=person,adj=adj)
-    else:
-        adj='fabulous unicorn'
-        return flask.render_template('index.html', person=person,adj=adj)
+    return flask.render_template('index.html', person=person)
+    
 
 @app.route('/talk')
 def talk():
